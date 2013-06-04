@@ -119,7 +119,7 @@ class Recipe:
         result = []
         # remove duplicates by turning the tuple list into a set
         for source, target in set(bulkitems + sourceitems):
-            if os.path.exists(target):
+            if os.path.lexists(target):
                 self.logger.debug('Symlink target %s already exists' % target)
                 result.append(target)
             elif not os.path.exists(source):
